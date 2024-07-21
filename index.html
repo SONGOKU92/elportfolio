@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    
+
+    <div class="btn-rond-menu">
+        <div class="cont-ligne">
+            <div class="ligne-unique"></div>
+        </div>
+    </div>
+
+    
+
+    <nav class="nav-gauche">
+
+        <div class="blocs-menu">
+            <div class="cercle-portrait">
+                <img src="ressources/boss.svg" alt="portrait img">
+            </div>
+        </div>
+
+        <div class="blocs-menu">
+            <span class="nav-menu-item">
+                <a href="#accueil">
+                    Accueil
+                </a>
+            </span>
+        </div>
+        <div class="blocs-menu">
+            <span class="nav-menu-item">
+                <a href="#pres">
+                    Présentation
+                </a>
+            </span>
+        </div>
+        <div class="blocs-menu">
+            <span class="nav-menu-item">
+                <a href="#port">
+                    Portfolio
+                </a>
+            </span>
+        </div>
+        <div class="blocs-menu">
+            <span class="nav-menu-item">
+                <a href="#range">
+                    Compétences
+                </a>
+            </span>
+        </div>
+        <div class="blocs-menu">
+            <span class="nav-menu-item">
+                <a href="mailto:ad2code@proton.me">
+                    Contact
+                </a>
+            </span>
+        </div>
+
+
+
+        <div class="blocs-menu">
+            <div class="logo-cercle">
+                <a href="mailto:ad2code@proton.me">
+                    <img src="ressources/contact.svg" alt="logo contact">
+                </a>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Section Accueil -->
+
+    <section class="accueil" id="accueil">
+        <h1>Welcome to my Portfolio</h1>
+        <p class="txt-animation"></p>
+        <div id="Portfolio">
+        <div id="Compétences">
+        </div>
+        <a href="#port" class="btn-acc btn-acc1"
+        onclick="scrollToPortfolio()">Portfolio</a>
+        <a href="#range" class="btn-acc btn-acc2"
+        onclick="scrollToMesexpériences()">Skills</a>
+
+        <div class="medias">
+            <a href="https://github.com/SONGOKU92" target="blank">
+                <div class="media media1">
+                    <img src="ressources/github.svg" alt="github icone" class="icone-medias">
+                </div>
+            </a>
+           
+        </div>
+
+        <a href="#pres">
+            <div class="btn-rond">
+                <img src="ressources/arrowDown.svg" alt="logo fleche bas" class="logo-btn-rond-acc">
+            </div>
+        </a>
+    </section>
+
+
+
+<section class="presentation" id="pres">
+
+    <h2 class="titre-pres">La cybersecurité</h2>
+
+    <div class="container-presentation">
+        
+
+        <div class="fond-forme"></div>
+
+        <div class="pres-gauche">
+            <h3>BTS SIO</h3>
+            <hr>
+            <p>Actuellement en première année, le BTS SIO prépare principalement les étudiants aux métiers de l'informatique. Il se divise en deux options en deuxiéme année, SISR ou SLAM.</p>
+            <br>
+            <p>
+            Dans un monde hyperconnecté, la cybersécurité est devenue cruciale pour protéger les systèmes et les données contre les cyberattaques. Avec l'évolution rapide des menaces, il est essentiel de maintenir une veille constante et de mettre à jour régulièrement les mesures de sécurité pour se défendre efficacement.
+            </p>
+        </div>
+        
+        <div class="pres-droite">
+            <ul class="liste-presentation">
+                <li class="item-liste i1">
+                    <span class="chiffre-style">1.</span>
+                    <p class="txt-liste">Solutions d'Infrastructure, Systèmes et Réseaux</p>
+                </li>
+                <li class="item-liste i2">
+                    <span class="chiffre-style">2.</span>
+                    <p class="txt-liste">Solutions Logicielles et Applications Métiers</p>
+                </li>
+             
+               
+            </ul>
+        </div>
+        
+    </div>
+
+</section>
+
+
+
+<section class="portfolio" id="port">
+
+
+    <h2 class="titre-port">Mon Portfolio</h2>
+
+    <div class="cont-portfolio">
+
+
+        <div class="item vague1">
+            <div class="cont-img-port">
+                <img src="ressources/ggdg.png" alt="img portfolio">
+            </div>
+            <h3>Windows Server </h3>
+            <p>Installation et configuration de l'Active Directory sur un serveur Windows 2022 et DNS+DHCP</p>
+            
+            
+        </div>
+
+        <div class="item vague1">
+            <div class="cont-img-port">
+                <img src="ressources/VMAP.png" alt="img portfolio">
+            </div>
+            <h3>VM NAS</h3>
+            <p>Installation et configuration d'une VM sur un serveur NAS</p>
+            
+        </div>
+
+        <div class="item vague1">
+            <div class="cont-img-port">
+                <img src="ressources/d3.jpg" alt="img portfolio">
+            </div>
+            <h3>PHP/MySQL </h3>
+            <p>Développement d'un formulaire web dynamique avec PHP/MySQL, hebergé sur Apache via XAMPP </p>
+            
+        </div>
+        <div class="item vague1">
+            <div class="cont-img-port">
+                <img src="ressources/crsain.png" alt="img portfolio">
+            </div>
+            <h3>Front-end</h3>
+            <p>Création d'un site de fitness en HTML/CSS</p>
+            
+        </div>
+
+         <div class="item vague1">
+            <div class="cont-img-port">
+                <img src="ressources/project6.png" alt="img portfolio">
+                
+            </div>
+            <h3>CMS</h3>
+            <p>Developpement d'une landing page avec le CMS Webflow</p>
+              <a href="https://www.zorba-global.com/" class="btn-projets">Voici le projet</a>
+            
+        </div>
+        <div class="item vague1">
+            <div class="cont-img-port">
+                <img src="ressources/bootstrap.jpg" alt="img portfolio">
+                
+            </div>
+            <h3>Storage virtualization</h3>
+            <p>RAID5 on windows server</p>
+            
+        </div>
+
+
+       
+
+    </div>
+
+
+</section>
+
+
+<section class="section-range" id="range">
+
+    <h2 class="titre-exp">Mes compétences</h2>
+
+    <div class="grille-skill">
+
+
+        <div class="range-cont">
+            <p class="label-skill">HTML</p>
+            <p class="number-skill">90%</p>
+            <div class="barre-skill b1"></div>
+            <div class="barre-grises"></div>
+        </div>
+        <div class="range-cont">
+            <p class="label-skill">CSS</p>
+            <p class="number-skill">80%</p>
+            <div class="barre-skill b2"></div>
+            <div class="barre-grises"></div>
+        </div>
+        <div class="range-cont">
+            <p class="label-skill">Python</p>
+            <p class="number-skill">60%</p>
+            <div class="barre-skill b3"></div>
+            <div class="barre-grises"></div>
+        </div>
+
+
+        <div class="range-cont">
+            <p class="label-skill">JavaScript</p>
+            <p class="number-skill">50%</p>
+            <div class="barre-skill b4"></div>
+            <div class="barre-grises"></div>
+        </div>
+        <div class="range-cont">
+            <p class="label-skill">Linux</p>
+            <p class="number-skill">20%</p>
+            <div class="barre-skill b5"></div>
+            <div class="barre-grises"></div>
+        </div>
+       
+
+
+    </div>
+
+</section>
+
+
+
+<section class="travail-exp" id="exp">
+
+    <h2 class="titre-travail-exp">Mes expériences</h2>
+
+    <div class="cont-exp-travail">
+
+        <div class="barre-verticale">
+            <div class="boule-ico">
+                <img src="ressources/ffdd2.png" alt="icone gauche">
+            </div>
+            <div class="boule-ico">
+                
+            </div>
+            <div class="boule-ico">
+                
+            </div>
+            <div class="boule-ico">
+                <img src="ressources/ledoc2.png" alt="icone gauche">
+            </div>
+            <div class="boule-ico">
+                <img src="ressources/plane.svg" class="avion" alt="icone gauche">
+            </div>
+        </div>
+
+
+        <div class="flex-cont-bloc-exp">
+
+            <div class="bloc bloc1">
+                <div class="contenu-bloc">
+                    <p class="titre-section-bloc">Zorba Group</p>
+                    <p class="txt-section">Alternance de 2 ans en tant que Data Manager chez Zorba Group</p>
+                </div>
+            </div>
+
+            <div class="bloc bloc2">
+                <div class="contenu-bloc">
+                    <p class="titre-section-bloc">BTS SIO 2023-2025</p>
+                    <p class="txt-section">Formation en alternance par la voix professionalisante.</p>
+                </div>
+            </div>
+
+            <div class="bloc bloc3">
+                <div class="contenu-bloc">
+                    <p class="titre-section-bloc">BAC STMG</p>
+                    <p class="txt-section">Niveau Bac</p>
+                </div>
+            </div>
+
+            <div class="bloc bloc4">
+                <div class="contenu-bloc">
+                    <p class="titre-section-bloc">Aselec Technologies</p>
+                    <p class="txt-section">Stage </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</section>
+
+
+
+
+<div class="section-parallax">
+    <p class="txt-par">
+        Adrien Delaunay
+    </p>
+    <p class="txt-par">
+        10 Projets
+    </p>
+    <p class="txt-par">
+        ad2code@proton.me
+    </p>
+</div>
+
+
+
+
+<section class="section-contact" id="contact">
+
+    <h2><strong>Rentrons</strong> en Contact</h2>
+
+    <div class="container-form">
+
+        <form class="form-bloc"netlify>
+
+            <div class="form-groupe">
+                <label for="prenom">Prénom</label>
+                <input type="text" required maxlength="16" id="prenom">
+            </div>
+            <div class="form-groupe">
+                <label for="nom">Nom</label>
+                <input type="text" required maxlength="16" id="nom">
+            </div>
+            <div class="form-groupe">
+                <textarea id="txt" placeholder="Votre message" required></textarea>
+            </div>
+
+            <div class="form-groupe">
+                <input type="submit" value="ENVOYER" class="button-sub">
+            </div>
+
+        </form>
+
+    </div>
+
+
+</section>
+
+<footer>
+    Copyright 2024 &copy; Adrien DELAUNAY
+</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
