@@ -1,7 +1,8 @@
-window.addEventListener('scroll', function() {
-    
-    history.replaceState(null, null, window.location.pathname);
-});
+function removeHash() {
+        history.replaceState(null, null, ' ');
+}
+window.addEventListener('hashchange', removeHash);
+window.addeventListener('load', removeHash);
 
 
 const btnMenu = document.querySelector('.btn-rond-menu')
