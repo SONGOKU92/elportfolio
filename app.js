@@ -1,8 +1,3 @@
-function removeHash() {
-        history.replaceState(null, null, ' ');
-}
-window.addEventListener('hashchange', removeHash);
-window.addeventListener('load', removeHash);
 
 
 const btnMenu = document.querySelector('.btn-rond-menu')
