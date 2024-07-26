@@ -1,4 +1,7 @@
-
+window.addEventListener('scroll', function() {
+    
+    history.replaceState(null, null, window.location.pathname);
+});
 
 const btnMenu = document.querySelector('.btn-rond-menu')
 const nav = document.querySelector('.nav-gauche');
