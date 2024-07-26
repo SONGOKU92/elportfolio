@@ -2,7 +2,7 @@ window.addEventListener('scroll', function() {
     
     history.replaceState(null, null, window.location.pathname);
 });
-<body oncontextmenu="return false;"></body>
+
 
 const btnMenu = document.querySelector('.btn-rond-menu')
 const nav = document.querySelector('.nav-gauche');
