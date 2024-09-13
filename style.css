@@ -1153,6 +1153,7 @@ textarea:focus {
     color: #333;
     font-size: 24px;
     font-weight: 500;
+    margin-top: 10px;
     cursor: pointer;
 }
 .form-groupe .button-sub:hover {
