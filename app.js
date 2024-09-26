@@ -41,13 +41,15 @@ typewriter
 .changeDelay(20)
 .typeString('Je m\'appelle Adrien Delaunay')
 .pauseFor(300)
-.typeString('<strong>, Etudiant en BTS SIO </strong> !')
-.pauseFor(1400)
+.typeString('<strong>, Etudiant en BTS SIO -Option SLAM </strong> !')
+.pauseFor(1550)
 .deleteChars(23)
 .typeString('<span style="color: #bb0b0b;"> Web Design, </span> !')
 .pauseFor(300)
 .deleteChars(1)
 .typeString('<span style="color: #191970;"> Programmation</span> !')
+.pauseFor(300)
+.typeString('<span style="color: #333;"> Database</span> !')
 .start()
 
 
