@@ -241,6 +241,7 @@ h1 {
     border-radius: 2px;
     font-size: 18px;
     transition: transform 0.2s ease-in-out;
+    z-index: 10;
 }
 
 .btn-acc1 {
