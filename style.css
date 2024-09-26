@@ -262,9 +262,14 @@ h1 {
     
 }
 
+@keyframes shrink {
+    0% { transform: scale(1); }         /* Taille normale */
+    50% { transform: scale(0.9); }      /* Réduction à 90% */
+    100% { transform: scale(1); }       /* Retour à la taille normale */
+}
 
 .btn-acc:active, .btn-acc1:active, .btn-acc2:active {
-    animation: pop-up 0.4s ease-in-out;
+    animation: shrink 0.2s ease-in-out;
 }
 
 .medias {
