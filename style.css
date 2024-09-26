@@ -262,12 +262,6 @@ h1 {
     
 }
 
-@keyframes pop-up {
-    0% { transform: scale(1); }         /* Taille normale */
-    30% { transform: scale(0.55); }     /* Rétrécissement à 55% */
-    50% { transform: scale(1.2); }      /* Rebond à 120% */
-    100% { transform: scale(1); }       /* Retour à la taille normale */
-}
 
 .btn-acc:active, .btn-acc1:active, .btn-acc2:active {
     animation: pop-up 0.4s ease-in-out;
