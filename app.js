@@ -49,7 +49,7 @@ typewriter
 .deleteChars(1)
 .typeString('<span style="color: #191970;"> Programmation</span> !')
 .pauseFor(300)
-.typeString('<span style="color: #C9AE14;"> Database</span> !')
+.typeString('<span style="color: #8B0000;"> DB/BD</span> !')
 .start()
 
 
