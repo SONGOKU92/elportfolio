@@ -264,7 +264,7 @@ h1 {
 
 @keyframes shrink {
     0% { transform: scale(1); }         /* Taille normale */
-    50% { transform: scale(0.8); }      /* Réduction à 90% */
+    50% { transform: scale(0.9); }      /* Réduction à 90% */
     100% { transform: scale(1); }       /* Retour à la taille normale */
 }
 
