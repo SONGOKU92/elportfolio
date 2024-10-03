@@ -812,10 +812,11 @@ h1 {
 }
 .b3 {
     width: 60%;
-    background: rgb(243,237,146);
+    
 }
 .b4 {
     width: 40%;
+    background: rgb(243,237,146);
 }
 .b5 {
     width: 20%;
