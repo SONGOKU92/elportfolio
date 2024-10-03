@@ -764,8 +764,8 @@ h1 {
     flex-direction: column;
     padding-bottom: 200px;
     border-bottom: 1px dashed #333;
-    background: #485563;
-    background-image: linear-gradient(to right, #29323c, #485563);
+    background: #200037;
+    background-image: linear-gradient(to right, #29323c, #200037);
     color: #f1f1f1;
     position: relative;
     z-index: -1;
