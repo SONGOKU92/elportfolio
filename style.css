@@ -500,7 +500,7 @@ h1 {
 }
 .fond-forme {
     background: #200037;
-    background-image: linear-gradient(to right, #485869, #200037);
+    background-image: linear-gradient(to right, #29323c, #200037);
     width: 2300px;
     height: 1000px;
     position: absolute;
@@ -765,7 +765,7 @@ h1 {
     padding-bottom: 200px;
     border-bottom: 1px dashed #333;
     background: #200037;
-    background-image: linear-gradient(to right, #485869, #200037);
+    background-image: linear-gradient(to right, #29323c, #200037);
     color: #f1f1f1;
     position: relative;
     z-index: -1;
