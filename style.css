@@ -815,11 +815,14 @@ h1 {
     background: rgb(243,237,146);
 }
 .b4 {
-    width: 50%;
+    width: 40%;
 }
 .b5 {
-    width: 30%;
+    width: 20%;
 }
+.b6 { 
+    width : 35%;
+    }
 
 .label-skill {
     font-size: 24px;
