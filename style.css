@@ -216,7 +216,7 @@ body {
     position: relative;
 }
 h1 {
-    font-size: 50px;
+    font-size: 84px;
     font-family: 'GT Walsheim', sans-serif;
     font-style: italic;
     margin: 0 60px;
@@ -322,7 +322,7 @@ h1 {
 /* Medias Accueil */
 @media screen and (max-width: 1420px) {
     h1 {
-        font-size: 75px;
+        font-size: 70px;
         white-space: nowrap;
     }
 }
@@ -332,7 +332,7 @@ h1 {
         background-position: center;
     }
     h1 {
-        font-size: 70px;
+        font-size: 60px;
         white-space: nowrap;
     }
 }
@@ -344,7 +344,7 @@ h1 {
         
     }
     h1 {
-        font-size: 60px;
+        font-size: 50px;
         margin: 0 30px 0 30px;
         padding-top: 100px;
         white-space: nowrap;
@@ -365,7 +365,7 @@ h1 {
 
 @media screen and (max-width: 750px) {
     h1 {
-        font-size: 55px;
+        font-size: 45px;
          white-space: nowrap;
     }
 
@@ -378,7 +378,7 @@ h1 {
     
     }
     h1 {
-        font-size: 50px;
+        font-size: 40px;
         margin: 0 30px;
         white-space: nowrap;
     }
@@ -392,7 +392,7 @@ h1 {
 }
 @media screen and (max-width: 630px) {
     h1 {
-        font-size: 42px;
+        font-size: 39px;
         white-space: nowrap;
     }
 }
