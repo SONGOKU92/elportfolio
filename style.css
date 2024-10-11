@@ -327,7 +327,7 @@ h1 {
 /* Medias Accueil */
 @media screen and (max-width: 1420px) {
     h1 {
-        font-size: 60px;
+        font-size: 58px;
         white-space: nowrap;
     }
 }
