@@ -323,6 +323,7 @@ h1 {
     h1 {
         font-size: 65px;
     }
+}
 
 /* Medias Accueil */
 @media screen and (max-width: 1420px) {
@@ -345,8 +346,6 @@ h1 {
     .accueil {
         height: 700px;
         min-height: 0;
-        
-        
     }
     h1 {
         font-size: 50px;
@@ -372,6 +371,7 @@ h1 {
     h1 {
         font-size: 44px;
     }
+}
 
 @media screen and (max-width: 750px) {
     h1 {
@@ -502,6 +502,7 @@ h1 {
     h1 { 
         font-size: 15px;
     }
+}
 
 /* ---------- Section Presentation ---------- */
 
