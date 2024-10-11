@@ -319,10 +319,15 @@ h1 {
     width: 35px;
 }
 
+@media screen and (max-width: 1728px) {
+    h1 {
+        font-size: 74px;
+    }
+
 /* Medias Accueil */
 @media screen and (max-width: 1420px) {
     h1 {
-        font-size: 70px;
+        font-size: 65px;
         white-space: nowrap;
     }
 }
@@ -336,7 +341,7 @@ h1 {
         white-space: nowrap;
     }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
     .accueil {
         height: 700px;
         min-height: 0;
