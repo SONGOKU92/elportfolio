@@ -500,7 +500,7 @@ h1 {
 }
 @media screen and (max-width: 335px) {
     h1 { 
-        font-size: 17px;
+        font-size: 15px;
     }
 
 /* ---------- Section Presentation ---------- */
