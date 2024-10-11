@@ -321,13 +321,13 @@ h1 {
 
 @media screen and (max-width: 1728px) {
     h1 {
-        font-size: 74px;
+        font-size: 65px;
     }
 
 /* Medias Accueil */
 @media screen and (max-width: 1420px) {
     h1 {
-        font-size: 65px;
+        font-size: 60px;
         white-space: nowrap;
     }
 }
@@ -368,9 +368,14 @@ h1 {
     }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
     h1 {
         font-size: 45px;
+    }
+
+@media screen and (max-width: 750px) {
+    h1 {
+        font-size: 40px;
          white-space: nowrap;
     }
 
@@ -383,7 +388,7 @@ h1 {
     
     }
     h1 {
-        font-size: 40px;
+        font-size: 35px;
         margin: 0 30px;
         white-space: nowrap;
     }
@@ -397,13 +402,13 @@ h1 {
 }
 @media screen and (max-width: 630px) {
     h1 {
-        font-size: 39px;
+        font-size: 32px;
         white-space: nowrap;
     }
 }
 @media screen and (max-width: 540px) {
     h1 {
-        font-size: 36px;
+        font-size: 30px;
         white-space: nowrap;
     }
 }
@@ -411,7 +416,7 @@ h1 {
 @media screen and (max-width: 500px) {
 
     h1 {
-        font-size: 30px;
+        font-size: 28px;
         white-space: nowrap;
     }
     .accueil p {
