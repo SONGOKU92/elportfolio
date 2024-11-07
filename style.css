@@ -385,7 +385,7 @@ h1 {
     
     }
     h1 {
-        font-size: 35px;
+        font-size: 36px;
         margin: 0 30px;
         white-space: nowrap;
     }
@@ -399,13 +399,13 @@ h1 {
 }
 @media screen and (max-width: 630px) {
     h1 {
-        font-size: 31px;
+        font-size: 32px;
         white-space: nowrap;
     }
 }
 @media screen and (max-width: 545px) {
     h1 {
-        font-size: 29px;
+        font-size: 30px;
         white-space: nowrap;
     }
 }
@@ -413,7 +413,7 @@ h1 {
 @media screen and (max-width: 500px) {
 
     h1 {
-        font-size: 25px;
+        font-size: 26px;
         white-space: nowrap;
     }
     .accueil p {
@@ -465,7 +465,7 @@ h1 {
     h1 {
         margin: 0 30px 0 5px;
         padding-top: 120px;
-        font-size: 20px;
+        font-size: 23px;
     }
     .accueil p {
         margin: 30px 0 0 5px;
