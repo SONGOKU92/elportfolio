@@ -44,10 +44,7 @@ typewriter
 .typeString('<strong>, Etudiant en BTS SIO </strong> !')
 .pauseFor(2300)
 .deleteChars(23)
-.typeString('<span style="color: #bb0b0b;"> Front-end, </span> !')
-.pauseFor(300)
-.deleteChars(1)
-.typeString('<span style="color: #191970;"> Back-end</span> !')
+.typeString('<span style="color: #bb0b0b;"> Software Architect, </span> !')
 .start()
 
 
