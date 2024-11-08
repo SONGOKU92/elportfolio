@@ -42,9 +42,9 @@ typewriter
 .typeString('Je m\'appelle Adrien Delaunay')
 .pauseFor(300)
 .typeString('<strong>, Etudiant en BTS SIO </strong> !')
-.pauseFor(2300)
+.pauseFor(2000)
 .deleteChars(23)
-.typeString('<span style="color: #191970;"> Software Architect, </span> !')
+.typeString('<span style="color: #191970;"> Software Architect </span> !')
 .start()
 
 
