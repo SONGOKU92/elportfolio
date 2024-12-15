@@ -1,0 +1,15 @@
+<svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond du logo -->
+  <rect x="0" y="0" width="300" height="100" fill="#1a47b8" rx="10"/>
+  
+  <!-- Symbole de la maison -->
+  <path d="M50 70 L50 40 L75 20 L100 40 L100 70 Z" fill="#ffc107" stroke="white" stroke-width="2"/>
+  
+  <!-- Symbole des flèches circulaires (formation continue) -->
+  <path d="M85 45 A20 20 0 1 1 65 45" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  <path d="M65 45 L70 40 L65 45 L60 40" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Texte -->
+  <text x="120" y="45" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">MFC</text>
+  <text x="120" y="65" fill="white" font-family="Arial, sans-serif" font-size="12">Maison de la Formation Continue</text>
+</svg>
