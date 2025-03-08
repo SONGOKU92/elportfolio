@@ -1,198 +1,269 @@
-window.addEventListener('scroll', function() {
-    
-    history.replaceState(null, null, window.location.pathname);
+// Prevent page jumps from anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
 
+// Mobile menu toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
 
-const btnMenu = document.querySelector('.btn-rond-menu')
-const nav = document.querySelector('.nav-gauche');
-const allItemNav = document.querySelectorAll('.nav-menu-item');
-const ligne = document.querySelector('.cont-ligne');
-
-btnMenu.addEventListener('click', () => {
-
-    ligne.classList.toggle('active')
-    nav.classList.toggle('menu-visible')
-
-})
-
-if(window.matchMedia('(max-width: 1300px)')) {
- 
-    allItemNav.forEach(item => {
-        item.addEventListener('click', () => {
-            nav.classList.toggle('menu-visible')
-            ligne.classList.toggle('active');
-        })
-    })
-
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
 }
 
-// Animation écriture
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
 
-const txtAnim = document.querySelector('.txt-animation');
+// Sticky header on scroll
+const header = document.querySelector('header');
+let lastScrollPosition = 0;
 
-let typewriter = new Typewriter(txtAnim,  {
-    loop: false,
-    deleteSpeed: 20
-})
+window.addEventListener('scroll', () => {
+    const currentScrollPosition = window.pageYOffset;
+    
+    if (currentScrollPosition > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+    
+    lastScrollPosition = currentScrollPosition;
+});
 
-typewriter 
-.pauseFor(1200)
-.changeDelay(20)
-.typeString('Je m\'appelle Adrien Delaunay')
-.pauseFor(300)
-.typeString('<strong>, Etudiant en BTS SIO </strong> !')
-.pauseFor(2000)
-.deleteChars(23)
-.typeString('<span style="color: #191970;"> Développeur </span> !')
-.start()
+// Form input animations
+const formInputs = document.querySelectorAll('.form-input');
 
+formInputs.forEach(input => {
+    // Initial state check
+    if (input.value.trim() !== '') {
+        input.parentElement.classList.add('filled');
+    }
 
-// Animation Contact
+    // Focus event
+    input.addEventListener('focus', () => {
+        input.parentElement.classList.add('focus');
+    });
 
-const input_fields = document.querySelectorAll('input');
-
-for(let i = 0; i < input_fields.length; i++) {
-
-    let field = input_fields[i];
-
-    field.addEventListener('input', (e) => {
-        if(e.target.value !== ''){
-            e.target.parentNode.classList.add('animation')
-        } else if (e.target.value == ''){
-            e.target.parentNode.classList.remove('animation')
+    // Blur event
+    input.addEventListener('blur', () => {
+        input.parentElement.classList.remove('focus');
+        
+        if (input.value.trim() !== '') {
+            input.parentElement.classList.add('filled');
+        } else {
+            input.parentElement.classList.remove('filled');
         }
-    })
+    });
 
+    // Input event
+    input.addEventListener('input', () => {
+        if (input.value.trim() !== '') {
+            input.parentElement.classList.add('filled');
+        } else {
+            input.parentElement.classList.remove('filled');
+        }
+    });
+});
+
+// Initialize animations when document is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Hero section animations
+    const heroElements = document.querySelectorAll('.hero .animate');
+    heroElements.forEach((element, index) => {
+        element.classList.add('fadeIn');
+        element.style.animationDelay = `${0.2 * (index + 1)}s`;
+    });
+
+    // Initialize skill bars animation
+    animateSkillBars();
+
+    // Initialize scroll animations
+    initScrollAnimations();
+
+    // Initialize text typing animation
+    if (document.querySelector('.typing-text')) {
+        initTypingAnimation();
+    }
+});
+
+// Animate skill bars
+function animateSkillBars() {
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    skillBars.forEach(bar => {
+        const percentage = bar.getAttribute('data-percentage');
+        bar.style.width = '0%';
+        
+        setTimeout(() => {
+            bar.style.width = percentage + '%';
+        }, 500);
+    });
 }
 
-// Anim GSAP + ScrollMagic
+// Scroll animations
+function initScrollAnimations() {
+    const elementsToAnimate = document.querySelectorAll('.scroll-animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fadeIn');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    elementsToAnimate.forEach(element => {
+        observer.observe(element);
+    });
+}
 
-const navbar = document.querySelector('.nav-gauche');
-const titre = document.querySelector('h1');
-const btn = document.querySelectorAll('.btn-acc')
-const btnMedias = document.querySelectorAll('.media')
-const btnRondAccueil = document.querySelector('.btn-rond')
+// Portfolio filtering
+const filterBtns = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
 
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        const filter = btn.getAttribute('data-filter');
+        
+        // Show/hide portfolio items based on filter
+        portfolioItems.forEach(item => {
+            if (filter === 'all') {
+                item.style.display = 'block';
+            } else if (item.classList.contains(filter)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+            
+            // Trigger animation
+            setTimeout(() => {
+                item.classList.add('animate');
+            }, 100);
+        });
+    });
+});
 
-const TL1 = gsap.timeline({paused: true});
+// Typing animation for hero section
+function initTypingAnimation() {
+    const typingElement = document.querySelector('.typing-text');
+    const phrases = [
+        'Développeur',
+        'Etudiant en BTS SIO',
+        'Passionné d\'informatique'
+    ];
+    
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100;
+    
+    function type() {
+        const currentPhrase = phrases[phraseIndex];
+        
+        if (isDeleting) {
+            // Removing characters
+            typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 50;
+        } else {
+            // Adding characters
+            typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 100;
+        }
+        
+        // If finished typing phrase
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            isDeleting = true;
+            typingSpeed = 1000; // Pause at end of phrase
+        } 
+        // If finished deleting phrase
+        else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typingSpeed = 500; // Pause before new phrase
+        }
+        
+        setTimeout(type, typingSpeed);
+    }
+    
+    // Start the typing animation
+    setTimeout(type, 1000);
+}
 
-TL1 
-.to(navbar, {left: '0px', ease: Power3.easeOut, duration: 0.6})
-.from(titre, {y: -50, opacity: 0, ease: Power3.easeOut, duration: 0.4})
-.staggerFrom(btn, 1, {opacity: 0}, 0.2, '-=0.30')
-.staggerFrom(btnMedias, 1, {opacity: 0}, 0.2, '-=0.75')
-.from(btnRondAccueil, {y: -50, opacity:0, ease: Power3.easeOut, duration: 0.4}, '-=1')
+// Parallax effect for sections with parallax-bg class
+window.addEventListener('scroll', () => {
+    const parallaxElements = document.querySelectorAll('.parallax-bg');
+    
+    parallaxElements.forEach(element => {
+        const scrollPosition = window.pageYOffset;
+        const elementTop = element.offsetTop;
+        const elementHeight = element.offsetHeight;
+        
+        if (scrollPosition > elementTop - window.innerHeight && 
+            scrollPosition < elementTop + elementHeight) {
+            const speed = element.getAttribute('data-speed') || 0.5;
+            const yPos = (scrollPosition - elementTop) * speed;
+            element.style.backgroundPositionY = `${yPos}px`;
+        }
+    });
+});
 
-window.addEventListener('load', () => {
-    TL1.play();
-})
+// Counter animation for numbers
+function animateCounter() {
+    const counters = document.querySelectorAll('.counter');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const step = target / (duration / 16); // 60fps
+        let current = 0;
+        
+        const updateCounter = () => {
+            current += step;
+            if (current < target) {
+                counter.textContent = Math.ceil(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target;
+            }
+        };
+        
+        updateCounter();
+    });
+}
 
-// Animation ScrollMagic GSAP presentation
-
-const presentationContainer = document.querySelector('.presentation')
-const titrePres = document.querySelector('.titre-pres');
-const presGauche = document.querySelector('.pres-gauche')
-const listePres = document.querySelectorAll('.item-liste')
-
-const tlpres = new TimelineMax();
-
-tlpres
-.from(titrePres, {y: -200, opacity: 0, duration: 0.6})
-.from(presGauche, {y:-20, opacity: 0, duration: 0.6}, '-=0.5')
-.staggerFrom(listePres, 1, {opacity: 0}, 0.2, '-=0.5')
-
-const controller = new ScrollMagic.Controller();
-
-const scene = new ScrollMagic.Scene({
-    triggerElement: presentationContainer,
-    triggerHook: 0.5,
-    reverse: false
-})
-.setTween(tlpres)
-// .addIndicators()
-.addTo(controller)
-// Anim portfolio
-
-const portfolioContainer = document.querySelector('.portfolio')
-const titrePortfolio = document.querySelector('.titre-port')
-const itemPortfolio = document.querySelectorAll('.vague1')
-
-const tlPortfolio = new TimelineMax();
-
-tlPortfolio
-.from(titrePortfolio, {y: -50, opacity: 0, duration: 0.5})
-.staggerFrom(itemPortfolio, 1, {opacity: 0}, 0.2, '-=0.5')
-
-const scene2 = new ScrollMagic.Scene({
-    triggerElement: portfolioContainer,
-    triggerHook: 0.5,
-    reverse: false
-})
-.setTween(tlPortfolio)
-// .addIndicators()
-.addTo(controller)
-
-
-// Vague 2 
-
-const itemPortfolio2 = document.querySelectorAll('.vague2')
-
-const tlPortfolio2 = new TimelineMax();
-
-tlPortfolio2
-.staggerFrom(itemPortfolio2, 1, {opacity: 0}, 0.2, '-=0.5')
-
-const scene3 = new ScrollMagic.Scene({
-    triggerElement: itemPortfolio,
-    triggerHook: 0.2,
-    reverse: false
-})
-.setTween(tlPortfolio2)
-// .addIndicators()
-.addTo(controller)
-
-
-// Vague 3
-
-const itemPortfolio3 = document.querySelectorAll('.vague3')
-
-const tlPortfolio3 = new TimelineMax();
-
-tlPortfolio3
-.staggerFrom(itemPortfolio3, 1, {opacity: 0}, 0.2, '-=0.5')
-
-const scene4 = new ScrollMagic.Scene({
-    triggerElement: itemPortfolio2,
-    triggerHook: 0.2,
-    reverse: false
-})
-.setTween(tlPortfolio3)
-// .addIndicators()
-.addTo(controller)
-
-
-// Animation range
-
-const sectionComp = document.querySelector('.section-range');
-const titreComp = document.querySelector('.titre-exp');
-const allLabel = document.querySelectorAll('.label-skill')
-const allPourcent = document.querySelectorAll('.number-skill')
-const allBarres = document.querySelectorAll('.barre-skill')
-const allShadowBarres = document.querySelectorAll('.barre-grises')
-
-const tlCompetences = new TimelineMax();
-
-tlCompetences
-.from(titreComp, {opacity: 0, duration: 0.6})
-.staggerFrom(allLabel, 0.5, {y: -50, opacity:0}, 0.1, '-=0.5')
-.staggerFrom(allPourcent, 0.5, {y: -10, opacity:0}, 0.1, '-=1')
-.staggerFrom(allShadowBarres, 0.5, {y: -10, opacity:0}, 0.1, '-=1')
-.staggerFrom(allBarres, 0.5, {y: -10, opacity:0}, 0.1, '-=1')
-
-const scene5 = new ScrollMagic.Scene({
-    triggerElement: sectionComp,
-    reverse: false
-})
-.setTween(tlCompetences)
-.addTo(controller);
+// Initialize counter animation when elements are in viewport
+const counterSection = document.querySelector('.counter-section');
+if (counterSection) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter();
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+    
+    observer.observe(counterSection);
+}
